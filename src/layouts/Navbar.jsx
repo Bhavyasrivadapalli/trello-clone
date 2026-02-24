@@ -7,22 +7,28 @@ function Navbar({ user, onLogout }) {
   return (
     <div
       className="
-      h-14
-      bg-[#020617]
-      border-b border-gray-700
-      flex
-      items-center
-      justify-between
-      px-6
-      text-white
-      shadow-md
-    "
+        h-auto
+        min-h-14
+        bg-[#020617]
+        border-b border-gray-700
+        flex
+        flex-wrap
+        items-center
+        justify-between
+        gap-3
+        px-4
+        sm:px-6
+        py-2
+        text-white
+        shadow-md
+      "
     >
-      {/* LEFT - APP NAME */}
+      {/* LEFT — APP NAME */}
       <h1
         onClick={() => navigate("/dashboard")}
         className="
-          text-xl
+          text-lg
+          sm:text-xl
           font-semibold
           tracking-wide
           cursor-pointer
@@ -33,32 +39,36 @@ function Navbar({ user, onLogout }) {
         Trello
       </h1>
 
-      {/* CENTER - DASHBOARD LINK */}
+      {/* CENTER — DASHBOARD LINK */}
       <div
         onClick={() => navigate("/dashboard")}
         className="
-          flex items-center gap-2
+          flex
+          items-center
+          gap-2
           cursor-pointer
           hover:text-blue-400
           transition
-          text-sm
+          text-xs
+          sm:text-sm
           font-medium
         "
       >
         <LayoutDashboard size={18} />
-        Dashboard
+        <span className="hidden sm:inline">Dashboard</span>
       </div>
 
-      {/* RIGHT - USER SECTION */}
-      <div className="flex items-center gap-4">
+      {/* RIGHT — USER SECTION */}
+      <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
 
         {/* Profile */}
         <div className="flex items-center gap-2">
           <div className="bg-[#1e293b] p-2 rounded-full">
-            <User size={18} />
+            <User size={16} />
           </div>
 
-          <span className="text-sm font-medium">
+          {/* Hide username on very small screens */}
+          <span className="hidden sm:block text-sm font-medium">
             {user?.name || "User"}
           </span>
         </div>
@@ -67,18 +77,23 @@ function Navbar({ user, onLogout }) {
         <button
           onClick={onLogout}
           className="
-            flex items-center gap-2
+            flex
+            items-center
+            gap-1
+            sm:gap-2
             bg-red-600
             hover:bg-red-700
-            px-3
+            px-2
+            sm:px-3
             py-1.5
             rounded-lg
-            text-sm
+            text-xs
+            sm:text-sm
             transition
           "
         >
           <LogOut size={16} />
-          Logout
+          <span className="hidden sm:inline">Logout</span>
         </button>
 
       </div>
