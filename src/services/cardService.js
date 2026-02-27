@@ -27,7 +27,7 @@ export const createCard = async (listId, title) => {
   await addDoc(cardsRef, {
     listId,
     title,
-    order: Date.now(), // important for sorting
+    order: Date.now(), 
   });
 };
 

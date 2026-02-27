@@ -1,16 +1,79 @@
-# React + Vite
+# Trello Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based task management application inspired by Trello, built with Vite, Firebase, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Sign up and login with Firebase authentication
+- **Boards**: Create and manage multiple boards for organizing your projects
+- **Lists**: Organize cards within lists for better workflow management
+- **Cards**: Create, edit, and move cards between lists with ease
+- **Responsive Design**: Fully responsive interface built with Tailwind CSS
+- **Real-time Updates**: Powered by Firebase Firestore for real-time data synchronization
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 18 with Vite
+- **Styling**: Tailwind CSS
+- **Backend**: Firebase (Authentication & Firestore)
+- **Build Tool**: Vite
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://git.beehyv.com/bhavya.vadapalli/trello-clone.git
+cd trello-clone
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set up Firebase configuration:
+   - Create a `.env.local` file in the root directory
+   - Add your Firebase configuration variables
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Project Structure
+
+```
+src/
+├── components/       # React components (Board, Card, List, etc.)
+├── context/         # React Context for state management
+├── firebase/        # Firebase configuration and services
+├── layouts/         # Layout components
+├── pages/           # Page components
+├── routes/          # Route definitions and protected routes
+├── services/        # Business logic services
+└── styles/          # Global styles
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## License
+
+This project is licensed under the MIT License.

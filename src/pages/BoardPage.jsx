@@ -38,7 +38,7 @@ function BoardPage() {
 
   const handleLogout = async () => {
     await logoutUser();
-  };
+};
 
   /* ---------- Firebase User Listener ---------- */
   useEffect(() => {

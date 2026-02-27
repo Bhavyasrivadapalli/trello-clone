@@ -136,7 +136,7 @@ function Dashboard() {
               {/* DELETE ICON */}
               <button
                 onClick={(e) => {
-                  e.stopPropagation();
+                e.stopPropagation();
                   handleDelete(board.id);
                 }}
                 className="
